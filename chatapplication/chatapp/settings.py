@@ -11,9 +11,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!ncc@zr13dvdncvsr7-c2=2!dt-nzpi4=86*bse73xh-kjrks0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+app_service_host = Chat-webapp
+ALLOWED_HOSTS = [f"{app_service_host}.azurewebsites.net", "127.0.0.1"]
 
 
 # Application definition
@@ -77,10 +77,10 @@ CHANNEL_LAYERS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'chatdb',
-        'USER': 'chatuser',
-        'PASSWORD':'Chat@1234',
-        'HOST': 'localhost'
+        'NAME': 'postgres',
+        'USER': 'chatapp@chatappserver',
+        'PASSWORD':'Revanth@1998',
+        'HOST': 'chatappserver.postgres.database.azure.com'
     }
 }
 
@@ -134,3 +134,7 @@ EMAIL_HOST ='smtp.gmail.com'
 EMAIL_HOST_USER ='parepallirevanth@gmail.com'
 EMAIL_HOST_PASSWORD ='sumanth_12356'
 EMAIL_PORT = 587
+
+
+ADMIN_EMAIL = 'parepallirevanth@gmail.com'
+ADMINS = [('Admin', ADMIN_EMAIL)]
