@@ -89,7 +89,7 @@ celerybeat-schedule
 .env
 .venv
 env/
-/chatenv/
+chatenv/*
 ENV/
 env.bak/
 chatenv.bak/
@@ -112,4 +112,5 @@ dmypy.json
 # Secrets file
 .secrets
 # scripts
-/scripts/
+*/scripts/*
+.vscode/
